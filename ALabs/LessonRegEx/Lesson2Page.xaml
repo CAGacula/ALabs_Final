@@ -1,0 +1,95 @@
+﻿<Page x:Class="ALabs.LessonRegEx.Lesson2Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ALabs.LessonRegEx"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="Lesson2Page">
+    <Page.Resources>
+        <Style TargetType="Button" x:Key="DefaultButtonStyle">
+            <!-- Your button style here -->
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#A7A7A7"/>
+            <Setter Property="BorderBrush" Value="#A7A7A7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="#636363"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#2E3B42"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- Distance between content and top -->
+            <RowDefinition Height="40"/>
+            <!-- Main content -->
+            <RowDefinition Height="800"/>
+            <!-- Distance between main content and buttons-->
+            <RowDefinition Height="20"/>
+            <!-- Buttons below content -->
+            <RowDefinition Height="80"/>
+            <!-- Distance between lower buttons and bottom -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1"
+                CornerRadius="20"
+                Background="#F5F5F5"
+                BorderBrush="black"
+                BorderThickness="2" Margin="55,0,55,135">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <StackPanel HorizontalAlignment="Center" 
+                Margin="0,100,0,0">
+                <TextBlock FontSize="30"><Run Text="Lesson 2 | Regular Expressions"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,180 ,0,0">
+                <Button Content="1. Introduction: What are Regular Expressions?" Click ="btn1Click" Width="300" Height="50" Margin="15" Name="btn1" IsEnabled="True"  Style="{StaticResource DefaultButtonStyle}"/>
+                <Button Content="2. Common Symbols: +, *, and parentheses"       Click ="btn2Click" Width="300" Height="50" Margin="15" Name="btn2" IsEnabled="False" Style="{StaticResource DefaultButtonStyle}"/>
+                <Button Content="3. Basic Patterns"                              Click ="btn3Click" Width="300" Height="50" Margin="15" Name="btn3" IsEnabled="False" Style="{StaticResource DefaultButtonStyle}"/>
+                <Button Content="4. Recap"                                       Click ="btn4Click" Width="300" Height="50" Margin="15" Name="btn4" IsEnabled="False" Style="{StaticResource DefaultButtonStyle}"/>
+                <Button Content="5. Practice"                                     Click ="btn5Click" Width="300" Height="50" Margin="15" Name="btn5" IsEnabled="False" Style="{StaticResource DefaultButtonStyle}"/>
+            </StackPanel>
+
+            <TextBox TextAlignment="Left" 
+                 FontFamily="sans-serif" 
+                 FontWeight="Regular" 
+                 FontSize="18" 
+                 Margin="515,180,76,0"
+                 TextWrapping="Wrap" 
+                 Height="460" 
+                 Name="tbL" 
+                 IsReadOnly="True"
+                 IsEnabled="False" 
+                 VerticalAlignment="Top" TextChanged="tbL_TextChanged" />
+            <StackPanel>
+                <Button Content="Back" Width="100" Height="50" Click="BackButton_Click" HorizontalAlignment="Left" Margin="120,25" Style="{StaticResource DefaultButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

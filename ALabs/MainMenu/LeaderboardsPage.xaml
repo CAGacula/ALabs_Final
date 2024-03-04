@@ -1,0 +1,78 @@
+﻿<Page x:Class="ALabs.LeaderboardsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ALabs"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="LeaderboardsPage">
+    <Grid>
+        <Border
+            CornerRadius="20"
+            Background="#F5F5F5"
+            BorderBrush="black"
+            BorderThickness="2"
+            Width="1010" 
+            Height="550"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" RenderTransformOrigin="0.508,0.49" Margin="0,58,0,0">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+
+        <!-- Background for Rank, Name, Total Points -->
+        <Border
+            CornerRadius="20"
+            Background="#d3d3d3"
+            BorderBrush="black"
+            BorderThickness="2"
+            Width="610" 
+            Height="360"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" RenderTransformOrigin="0.508,0.49" Margin="0,182,0,0">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+        </Border>
+
+        <!-- Your UI layout goes here -->
+        <StackPanel>
+            <TextBlock Text="Leaderboards" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,90,0,25"/>
+
+            <Grid Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <!-- Left content -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Space between -->
+                    <ColumnDefinition Width="900"/>
+                    <!-- Right content -->
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Rank" FontSize="25" Margin="930,18,0,22"/>
+                <TextBlock Text="Name" FontSize="25" Margin="1075,18,0,22"/>
+                <TextBlock Text="Total Points" FontSize="25" Margin="1210,18,0,22"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Width="350" Margin="125,0,125,0" HorizontalAlignment="Center">
+                <StackPanel x:Name="stackPanelRanking" Margin="0,0,120,0" HorizontalAlignment="Center">
+                    <!-- Dynamic labels for ranking will be added here -->
+                </StackPanel>
+
+                <StackPanel x:Name="stackPanelUserName" Margin="10,0,120,0" HorizontalAlignment="Center">
+                    <!-- Dynamic labels for usernames will be added here -->
+                </StackPanel>
+
+                <StackPanel x:Name="stackPanelTotalPoints" Margin="10,0,0,0" HorizontalAlignment="Center">
+                    <!-- Dynamic labels for user scores will be added here -->
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Back" Width="150" Height="50" Margin="-290,380,0,0" Click="BackToMainMenu_Click" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+
+            <!-- Dynamic sections for ranking, username, and user score -->
+        </StackPanel>
+    </Grid>
+</Page>
