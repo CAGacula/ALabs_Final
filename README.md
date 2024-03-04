@@ -1,10 +1,10 @@
 # A-Labs Final Update
 
 Added New Feature Leaderboards:
--	User can view his/her and other user's total earned points. 
 -	Implemented in the LeaderboardsPage.xaml file.
 - Retrieved user data from the database, ordered by userScore in descending order.
 - Displayed the leaderboard in the UI using a stack panel.
+-	Users can view their total earned points as well as the total earned points of other users.
 
 Introduction of Scoring System in Challenge Regex:
 - Implemented a scoring system in the Challenge Regex section of the application.
@@ -42,14 +42,14 @@ Added New Feature Dynamic Display of User Name and Total Points in Main Menu:
 - Incorporated the LessonsPage constructor to fetch and display dynamic user information.
 - Extracted the user's name and total points from the authenticated user data.
 
-Bug Fix in Login Functionality:
+Bug Fixed in Login Functionality:
 - The previous code had a bug where the conditional statements for checking empty username and password were placed after attempting to 
   authenticate the user.
 - The code has been updated to first check for empty username or password before attempting to authenticate the user.
 - Moved the check for empty username or password to the beginning of the LoginButton_Click method.
 - Introduced a new boolean variable userExist to check if the user with the given username or password exists in the database.
 
-Bug Fix in Challenge Regex Progress Update:
+Bug Fixed in Challenge Regex Progress Update:
 - The bug was related to incorrect progress updates for challenge levels when a user completes a level and returns to the main menu. The 
   user's progress was not updated correctly when replaying the challenge, resulting in the user being placed back at the wrong level.
 - The code has been updated to ensure that the user's challenge progress is correctly updated based on the completed level.
